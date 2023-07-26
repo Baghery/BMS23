@@ -95,6 +95,7 @@ This function can be changed if you want to benchmark other parts of the setup.
 Now, run the code as described above, and the timings will be printed in the terminal.
 
 Benchmarking other SNARKs works very similarly.
+Note that you can use the implementation for Basilisk also for Plonk, only the calculation of the circuit size is different.
 
 ## License
 
