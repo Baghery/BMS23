@@ -1,8 +1,7 @@
 # BMS23: Benchmarking the Setup of Updatable zk-SNARKs
 
-This code contains an implementation of the setup of updatable zk-SNARKs: SONIC,Marlin, Plonk, Lunar and Basilisk. It can be used for benchmarking and comparing the performance of the different schemes. 
-The code is based on the [Arkworks](https://github.com/arkworks-rs) library.
-The algorithms and results of this implementation can be found in Latincrypt '23. The research was done by Karim Baghery, Axel Mertens and Mahdi Sedaghat (Cosic, KU Leuven).
+This code contains an implementation of the setup of updatable zk-SNARKs: SONIC, Marlin, Plonk, Lunar, and Basilisk. It can be used for benchmarking and comparing the performance of the setup phase in different schemes. 
+The code is based on the [Arkworks](https://github.com/arkworks-rs) library. The description of the algorithms and results of this implementation can be found in the Latincrypt '23 paper, and its full version is available on the IACR eprint archive. The research was done by Karim Baghery, Axel Mertens, and Mahdi Sedaghat (Cosic, KU Leuven).
 
 The structure of this repository is as follows:
 * basilisk_srs.rs: Rust code implementing the setup of Basilisk.
@@ -17,7 +16,7 @@ The structure of this repository is as follows:
   - sonic_timing.rs: Rust code for benchmarking Sonic.
 
 ## How to use
-The only prerequisits are rust and cargo to be installed. 
+The only prerequisites are rust and cargo to be installed. 
 
 To build the code, and get all necessary packages from [Arkworks](https://github.com/arkworks-rs):
 ```
@@ -31,14 +30,14 @@ cargo run --bin basilisk_timing
 
 
 ## Example Benchmark
-Say you want to benchmark Basilisk for a setting with 100 updates. First, calculate the circuit size. For Basilisk, this is simply the sum of the number of multiplication gates and addition gates. In this example, let's say this is 50 000.
+Say you want to benchmark Basilisk for a setting with 100 updates. First, set the upper bound on the size of SRS. For Basilisk, this is simply the number of multiplication gates in the circuit. In this example, let's say this is 50 000.
 
 In ```main()``` of src/bin/basilisk_timing.rs, enter those values:
 ```
 let n_updates = 100;
 let c_size = 50000;
 ```
-If you'd like to use a different curve then BLS12-381, you can edit this here as well. Make sure the curve is imported correctly.
+If you'd like to use a different curve than BLS12-381, you can edit this here as well. Make sure the curve is imported correctly.
 
 
 Then, in the function ```basilisk_timing(...)```, change the protocol to what you want to happen. Make sure the randomness is produced outside of the timing, as this can be done offline. 
@@ -105,4 +104,4 @@ This library is licensed under either of the following licenses, at your discret
  * MIT license ([LICENSE-MIT](LICENSE-MIT) or http://opensource.org/licenses/MIT)
 
 ## Acknowledgements
-This work has been supported in part by the Defense Advanced ResearchProjects Agency (DARPA) under contract No. HR001120C0085, by the FWO underan Odysseus project GOH9718N, by the Research Council KU Leuven C1 on Security and Privacy for Cyber-Physical Systems and the Internet of Things with contract number C16/15/058, and by CyberSecurity Research Flanders with reference number VR20192203.
+This work has been supported in part by the Defense Advanced Research Projects Agency (DARPA) under contract No. HR001120C0085, by the FWO under an Odysseus project GOH9718N, by the Research Council KU Leuven C1 on Security and Privacy for Cyber-Physical Systems and the Internet of Things with contract number C16/15/058, and by CyberSecurity Research Flanders with reference number VR20192203.
