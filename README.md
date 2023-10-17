@@ -1,7 +1,7 @@
 # BMS23: Benchmarking the Setup of Updatable zk-SNARKs
 
 This code contains an implementation of the setup of updatable zk-SNARKs: SONIC, Marlin, Plonk, Lunar, and Basilisk. It can be used for benchmarking and comparing the performance of the setup phase in different schemes. 
-The code is based on the [Arkworks](https://github.com/arkworks-rs) library. The description of the algorithms and results of this implementation can be found in the Latincrypt '23 paper, and its full version is available on the IACR eprint archive. The research was done by Karim Baghery, Axel Mertens, and Mahdi Sedaghat (Cosic, KU Leuven).
+The code is based on the [Arkworks](https://github.com/arkworks-rs) library. The description of the algorithms and results of this implementation can be found in the [Latincrypt '23 paper](https://link.springer.com/chapter/10.1007/978-3-031-44469-2_19), and its full version is available on the [IACR eprint](https://eprint.iacr.org/2023/1161) archive. The research was done by Karim Baghery, Axel Mertens, and Mahdi Sedaghat (Cosic, KU Leuven).
 
 The structure of this repository is as follows:
 * basilisk_srs.rs: Rust code implementing the setup of Basilisk.
